@@ -7,7 +7,7 @@ from rich.console import Console
 
 
 def main():
-
+    console = Console()
     season = input("Season [2018-19, 2019-20, 2020-21, 2021-22, 2022-23, 2023-24, 2024-25, 2025-26]: ")
     url = f"https://studies.cs.helsinki.fi/nhlstats/{season}/players"
         
@@ -21,14 +21,14 @@ def main():
 
 
 
-        console = Console()
-        table = Table(title="Suomalaiset huippupelaajat")
 
-        table.add_column("Nimi", style="cyan")
-        table.add_column("Joukkue")
-        table.add_column("Maalit", justify="right")
-        table.add_column("Syötöt", justify="right")
-        table.add_column("Pisteet", justify="right")
+        table = Table(title=f"[italic]Season {season} players from {nationality}[/italic]")
+
+        table.add_column("Name", style="cyan")
+        table.add_column("Teams", style="green")
+        table.add_column("Goals", justify="right")
+        table.add_column("Assists", justify="right")
+        table.add_column("Points", justify="right")
 
 
 
